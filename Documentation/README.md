@@ -121,8 +121,8 @@ Enter password: password
 SHOW DATABASES;
 USE laravel;
 SHOW TABLES;
-select * from migrations;
-describe fornecedores;
+SELECT *FROM migrations;
+DESCRIBE fornecedores;
 ```
 
 ## Model Laravel
@@ -161,8 +161,10 @@ $contato->save();
 
 ```bash
 sail artisan make:seeder NomeDoSeeder
+sail artisan migrate:rollback
+sail artisan migrate:reset
+sail artisan migrate
 sail artisan db:seed
-sail artisan migrate:fresh --seed
 ```
 
 ## Procedimento de projeto GitLab

@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nome', 50);
             $table->string('site')->nullable();
+            $table->string('uf', 2);
+            $table->string('email', 100);
+            $table->string('RG')->nullable();
             $table->timestamps();
         });
     }
