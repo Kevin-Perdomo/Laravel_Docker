@@ -1,6 +1,26 @@
 
-# Laravel Web Site
-[Documentation](https://laravel.com/)
+# Laravel 
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg">
+</div>
+
+## Sobre Laravel
+
+Laravel é um framework PHP moderno e elegante, voltado para o desenvolvimento rápido de aplicações web com um código expressivo e sintaxe clara. Ele oferece um robusto conjunto de ferramentas e uma arquitetura flexível, facilitando o desenvolvimento de aplicações desde simples APIs até sistemas complexos.
+
+## Recursos
+
+- **Arquitetura MVC**: Facilita a organização do código.
+- **Sistema de Rotas**: Rotas simples e expressivas.
+- **Segurança**: Proteção contra CSRF, XSS, entre outros.
+- **Eloquent ORM (Object-Relational Mapping)**: Um poderoso ORM para trabalhar com banco de dados.
+
+## Links úteis
+
+- [Documentação oficial](https://laravel.com/docs)
+- [Repositório GitHub](https://github.com/laravel/laravel)
+- [Comunidade Laravel](https://laracasts.com/)
 
 ## Criando um projeto Laravel completo com Docker
 
@@ -164,6 +184,7 @@ sail artisan make:seeder NomeDoSeeder
 sail artisan migrate:rollback
 sail artisan migrate:reset
 sail artisan migrate
+sail artisan migrate:refresh
 sail artisan db:seed
 ```
 
