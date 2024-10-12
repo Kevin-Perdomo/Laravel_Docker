@@ -187,6 +187,33 @@ sail artisan migrate
 sail artisan migrate:refresh
 sail artisan db:seed
 ```
+## Mailpit
+
+ - Configurar o `.env`
+```bash
+MAIL_MAILER=smtp
+MAIL_HOST=mailpit
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+```
+ - Usar o comando para criar um Mailable e uma View
+```bash
+sail artisan make:mail TestEmail --markdown test-email
+```
+ - Criar um comando no `console.php`
+```bash
+Artisan::command('test-email', function () {
+  Mail::to('kevin@gmail.com')->send(new App\Mail\TestEmail());
+});
+```
+ - Usar o comando gerado para enviar um E-mail
+```bash
+sail artisan test-email
+```
 
 ## Procedimento de projeto GitLab
 ```bash
