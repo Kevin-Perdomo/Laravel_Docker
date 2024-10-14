@@ -214,6 +214,51 @@ Artisan::command('test-email', function () {
 ```bash
 sail artisan test-email
 ```
+## Laravel Sail Debug with Xdebug
+
+### 1. Configurar o Xdebug no php.ini
+
+No diretório `./vendor/laravel/sail/runtimes/8.3`, abra o arquivo `php.ini` e adicione o seguinte trecho:
+
+```ini
+xdebug.mode = debug
+xdebug.start_with_request = yes
+xdebug.discover_client_host = 0
+xdebug.discover_client_host = host.docker.internal
+```
+
+### 2. Altere a seguinte linha do docker-compose.yml:
+```bash
+XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-debug}'
+```
+
+### 3. Rode os comandos:
+```bash
+sail build
+sail up -d
+```
+### 4. Instale a extensão para VS Code:
+```bash
+PHP Debug -> v1.35.0 -> xdebug.org
+```
+
+### 5. Crie no VS Code um arquivo launch.json:
+```bash
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for Xdebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9003, 
+            "pathMappings": {
+                "/var/www/html": "${workspaceFolder}"
+            }
+        }
+    ]
+}
+```
 
 ## Procedimento de projeto GitLab
 ```bash
