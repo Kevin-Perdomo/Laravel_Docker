@@ -235,6 +235,8 @@ XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-debug}'
 
 ### 3. Rode os comandos:
 ```bash
+sail up -d
+sail down
 sail build
 sail up -d
 ```
