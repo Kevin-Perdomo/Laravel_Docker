@@ -230,7 +230,7 @@ xdebug.discover_client_host = host.docker.internal
 
 ### 2. Altere a seguinte linha do docker-compose.yml:
 ```bash
-XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-debug}'
+XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-develop,debug,coverage}'
 ```
 
 ### 3. Rode os comandos:
