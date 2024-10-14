@@ -100,13 +100,6 @@ docker run --rm \
   de ambiente como `WWWUSER` e `WWWGROUP` que são usados pelos contêineres.
 - Por isso, as linhas do Docker Compose que contêm `WWWGROUP` e `WWWUSER` devem ser mantidas em suas versões originais.
 
-### Procedimento para prosseguir com o setup
-```bash
-sail build
-sail up  
-sail php artisan key:generate
-```
-
 ### Alterando variáveis de ambiente no arquivo .env
 ```bash
 O banco de dados usaria SQLite, mas configurei para usar o MySQL:
@@ -118,7 +111,15 @@ DB_USERNAME=sail
 DB_PASSWORD=password
 ```
 
+### Procedimento para prosseguir com o setup
+```bash
+sail build
+sail up  
+sail php artisan key:generate
+```
+
 ### Resolvendo conflito de volume do contêiner MySQL
+ - Caso já exista uma instância anterior do MySQL
 ```bash
 docker volume ls  
 docker volume rm laravel_docker_sail-mysql  
