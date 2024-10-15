@@ -68,50 +68,17 @@ Route::fallback(function ()
 //Enviando parâmetros da rota para o contolador
 Route::get('/teste/{p1}/{p2}', [TesteController::class, 'Teste'])->name('teste');
 
+// Teste de Email Mailpit
+Route::get('/send-test-email', function () {
+    \Mail::raw('Este é um e-mail de teste.', function ($message) {
+        $message->to('seu_email@example.com')
+                ->subject('Teste de E-mail');
+    });
 
+    return 'E-mail de teste enviado!';
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//Passando parâmetros obrigatórios na rota
-Route::get(
-    '/contato/{id}/{nome}/{sobrenome}/{idade}',
-    function (string $id, string $nome, string $sobrenome, string $idade) 
-    {
-        echo 'Teste de parâmetros: <br>';
-        echo 'id: ' . $id . '<br>';
-        echo 'nome: ' . $nome . '<br>';
-        echo 'sobrenome: ' . $sobrenome . '<br>';
-        echo 'idade: ' . $idade . '<br>';
-    }
-);
-*/
-
-/*
-//Passando parâmetros opcionais na rota, utilizando expressões regulares
-Route::get(
-    '/contato00/{nome}/{categoria_id}',
-    function (string $nome, int $categoria_id = 1) 
-    {
-        echo 'nome: ' . $nome . '<br>';
-        echo 'categoria: ' . $categoria_id . '<br>';
-    }
-)->where('nome','[A-Z a-z]+')->where('categoria_id','[0-9]*');
-*/
+// Teste de erro
+Route::get('/test-error', function () {
+    throw new \Exception('Este é um erro de teste!');
+});
