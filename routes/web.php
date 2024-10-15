@@ -19,6 +19,11 @@ Route::get('/server', function () {
     return view('server');
 });
 
+// Debug
+Route::get('/debug', function () {
+    return view('debug');
+});
+
 //Sintaxe sem a configuração do routeServiceProvide.php
 Route::get('/hello', [HelloController::class, 'hello']);
 
