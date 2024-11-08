@@ -13,4 +13,4 @@ class FornecedoresSeeder extends Seeder
         // Criar 10 registros de Fornecedores com o Factory
         Fornecedores::factory(10)->create();
     }
-}
+} 
